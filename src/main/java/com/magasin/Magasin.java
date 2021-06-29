@@ -83,7 +83,9 @@ class Magasin {
                         item.sellIn = item.quality + 2;
                     }
                     break;
-
+                case "Pouvoirs magiques":
+                    item.quality -= 2;
+                    break;
                     // Tous les autres items
                 default:
                     if(item.sellIn<0){
