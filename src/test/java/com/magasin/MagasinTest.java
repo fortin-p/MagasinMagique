@@ -28,8 +28,19 @@ class MagasinTest {
             actual.append(item).append(" - ");
         }
 
-        System.out.println(actual);
         assertEquals("Foo, -1, 0 - Normal, -2, 30 - Normal, -1, 0 - Kryptonite, 0, 80 - Pass VIP Concert, 2, 36 - Pass VIP Concert, -1, 0 - Comté, 2, 32 - Comté, -1, 3 - ",actual.toString());
+    }
+
+    @Test
+    void testPouvoirsMagique(){
+        Item pm  = new Item("Pouvoirs magiques", 4 , 48);
+        Item[] items = new Item[] {
+                pm
+        };
+        Magasin app = new Magasin(items);
+        app.updateQuality();
+        assertEquals(46, pm.quality);
+
     }
 
 }

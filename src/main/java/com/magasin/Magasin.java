@@ -84,6 +84,10 @@ class Magasin {
                     }
                     break;
 
+                case "Pouvoirs magiques":
+                    item.quality = item.quality - 2;
+                    break;
+
                     // Tous les autres items
                 default:
                     if(item.sellIn<0){
@@ -95,6 +99,7 @@ class Magasin {
 
             }
 
+            // Qualité de l'item compris entre 50 et 0
             item.quality = Math.min(50, item.quality);
             item.quality = Math.max(0, item.quality);
         }
